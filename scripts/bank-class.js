@@ -30,8 +30,10 @@ class ChildAccount extends BankAccount {
   withdrawl(amount) {
     console.log(this)
     if(this.balance - amount >= 0) {
-      this.balance -= amount
-      BankAccount.totalBalances -= amount
+      // this.balance -= amount
+      // BankAccount.totalBalances -= amount
+      // kick it back up to the parent class's method
+      super.withdrawl(amount)
     }
   }
 }
